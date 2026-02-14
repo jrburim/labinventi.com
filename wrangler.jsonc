@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "labinventi-site",
+  "compatibility_date": "2026-02-14",
+  "assets": {
+    "directory": "./public"
+  }
+}

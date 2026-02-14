@@ -1,4 +1,9 @@
 {
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --assets=./public"
+  },
   "devDependencies": {
     "wrangler": "^4.65.0"
   }
