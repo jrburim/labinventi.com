@@ -1,0 +1,265 @@
+:root {
+  --bg: #f3f6f8;
+  --surface: #ffffff;
+  --text: #1d232c;
+  --muted: #4f5d70;
+  --line: #c4d0db;
+  --brand-1: #007f7f;
+  --brand-2: #ef6a32;
+  --cta: #0d2f4f;
+  --cta-text: #f7f7f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%, #d9edf3 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, #ffe3d6 0%, transparent 42%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  width: min(1120px, calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.bg-glow {
+  position: fixed;
+  z-index: -1;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.glow-a {
+  width: 280px;
+  height: 280px;
+  background: #4fbdb3;
+  top: -80px;
+  left: -80px;
+}
+
+.glow-b {
+  width: 340px;
+  height: 340px;
+  background: #f7aa7e;
+  right: -100px;
+  top: 120px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+
+.brand {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.brand-primary {
+  color: var(--brand-1);
+}
+
+.brand-secondary {
+  color: var(--brand-2);
+}
+
+.tag {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+  font-size: 0.77rem;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.08;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.subtitle {
+  margin-top: 1.4rem;
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+
+.hero-actions {
+  margin-top: 1.7rem;
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  text-decoration: none;
+  background: var(--cta);
+  color: var(--cta-text);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(13, 47, 79, 0.2);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cta);
+  border-color: var(--cta);
+}
+
+.btn-small {
+  padding: 0.5rem 0.95rem;
+  font-size: 0.88rem;
+}
+
+.product {
+  padding: 1rem 0 3rem;
+}
+
+.product-card {
+  background: linear-gradient(132deg, #eff7fa 0%, #fff7f2 100%);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 1.5rem;
+}
+
+.product-kicker {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.product-card h2,
+.services h2,
+.contact h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0.3rem 0 0.6rem;
+}
+
+.product-card p,
+.services p,
+.contact p {
+  color: var(--muted);
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: 0.45rem 0;
+}
+
+.services {
+  padding: 0 0 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.grid article {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.grid h3 {
+  margin: 0 0 0.6rem;
+}
+
+.contact {
+  padding: 0 0 4rem;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.dot {
+  margin: 0 0.5rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: rise 760ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.hero {
+  animation-delay: 80ms;
+}
+
+.product {
+  animation-delay: 170ms;
+}
+
+.services {
+  animation-delay: 260ms;
+}
+
+.contact {
+  animation-delay: 350ms;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: min(1120px, calc(100% - 2rem));
+  }
+
+  .header {
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+}
