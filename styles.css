@@ -4,8 +4,8 @@
   --text: #1d232c;
   --muted: #4f5d70;
   --line: #c4d0db;
-  --brand-1: #007f7f;
-  --brand-2: #ef6a32;
+  --brand-1: #575757;
+  --brand-2: #191739;
   --cta: #0d2f4f;
   --cta-text: #f7f7f5;
 }
@@ -140,44 +140,15 @@ h1 {
   font-size: 0.88rem;
 }
 
-.product {
-  padding: 1rem 0 3rem;
-}
-
-.product-card {
-  background: linear-gradient(132deg, #eff7fa 0%, #fff7f2 100%);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: 1.5rem;
-}
-
-.product-kicker {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-
-.product-card h2,
 .services h2,
 .contact h2 {
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   margin: 0.3rem 0 0.6rem;
 }
 
-.product-card p,
 .services p,
 .contact p {
   color: var(--muted);
-}
-
-ul {
-  margin-bottom: 0;
-  padding-left: 1.2rem;
-}
-
-li {
-  margin: 0.45rem 0;
 }
 
 .services {
@@ -226,16 +197,12 @@ li {
   animation-delay: 80ms;
 }
 
-.product {
+.services {
   animation-delay: 170ms;
 }
 
-.services {
-  animation-delay: 260ms;
-}
-
 .contact {
-  animation-delay: 350ms;
+  animation-delay: 260ms;
 }
 
 @keyframes rise {
