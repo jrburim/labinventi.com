@@ -4,5 +4,15 @@
   "compatibility_date": "2026-02-14",
   "assets": {
     "directory": "./public"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "labinventi.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.labinventi.com",
+      "custom_domain": true
+    }
+  ]
 }
