@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Legiro 隱私 · Legiro</title><meta name="description" content="LabInventi 的 Legiro 提供引導閱讀，不需獨立帳號，無廣告，無跨 App 追蹤。本政策說明目前版本的本地處理和選用統計功能。"><link rel="canonical" href="https://labinventi.com/legiro/privacy/zh-Hant/"><link rel="stylesheet" href="../../style.css"></head><body><header><span class="brand">Legiro</span><nav><a href="index.html" aria-current="page">隱私權政策</a><a href="../../support/zh-Hant/index.html" >Legiro 支援</a></nav></header><main><h1>Legiro 隱私</h1><p class="intro">LabInventi 的 Legiro 提供引導閱讀，不需獨立帳號，無廣告，無跨 App 追蹤。本政策說明目前版本的本地處理和選用統計功能。</p><section><h2>相機與閱讀</h2><p>相機控制可在相容的 iPhone 和 iPad 上選擇開啟。臉部追蹤和文字辨識在裝置上運作。影像、臉部網格和臉部訊號不會被錄製、儲存或傳送。可在 App 中關閉控制，或在系統設定中撤銷相機權限。</p></section><section><h2>裝置上的資料</h2><p>偏好設定、書籤、閱讀歷史和匯入的 PDF 儲存在裝置上。App 與 Safari 透過 App Group 共用歷史和剩餘時長。刪除歷史不會刪除購買權益，也不會重新發放歡迎時數。剩餘時長不會跨裝置同步。</p></section><section><h2>網站與雲端書籍</h2><p>你在瀏覽器中開啟的網站有各自的政策、連線、Cookie 和登入工作階段。Legiro 開啟你已有存取權限的書籍網頁閱讀器，並加入引導閱讀。辨識是暫時且本地的；Legiro 不會將書籍內容傳送至自己的伺服器。</p></section><section><h2>購買</h2><p>Apple 透過 StoreKit 處理付款。Legiro 不接收信用卡資料。已驗證的購買權益儲存在本地並與 Safari 共用，也支援離線存取。Apple 允許你在其他裝置上回復購買，但不會轉移歡迎時數。</p></section><section><h2>選用統計資料</h2><p>僅在你同意後，iOS App 才向歐盟的 TelemetryDeck 傳送：每次閱讀分鐘區間、來源類型、節奏、相機開關狀態、錯誤代碼、時長預警及用盡、詞數及使用天數區間、購買頁面瀏覽與結果、歡迎流程完成、App 啟動和目標變更。絕不傳送閱讀文字、標題、完整位址、檔案、相機影像或訊號、憑證、帳號、位置或 IDFA。</p></section><section><h2>同意與保留</h2><p>統計功能預設關閉。拒絕不會限制閱讀或購買。可在「設定 → 隱私與資料」中開啟或撤回許可。關閉後會取消傳送並捨棄僅存在於記憶體中的佇列。匿名識別碼每天按 UTC 更換。已傳送的資料無法關聯到你以進行個別刪除；服務商不保證彙總事件的刪除期限。請參閱 TelemetryDeck 的政策與常見問題。</p></section><aside class="note"><p>商店隱私聲明包括產品互動和匿名雜湊裝置識別碼，不與你的身分關聯，也不用於追蹤。</p><p><a href="https://telemetrydeck.com/docs/guides/privacy-faq/">TelemetryDeck 政策與常見問題</a></p></aside></main><footer><strong>語言</strong><nav class="languages" aria-label="語言"><a lang="pt-BR" hreflang="pt-BR" href="../index.html" >Português (Brasil)</a><a lang="en" hreflang="en" href="../en/index.html" >English</a><a lang="fr" hreflang="fr" href="../fr/index.html" >Français</a><a lang="es" hreflang="es" href="../es/index.html" >Español</a><a lang="it" hreflang="it" href="../it/index.html" >Italiano</a><a lang="de" hreflang="de" href="../de/index.html" >Deutsch</a><a lang="ja" hreflang="ja" href="../ja/index.html" >日本語</a><a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html" >简体中文</a><a lang="zh-Hant" hreflang="zh-Hant" href="index.html" aria-current="page">繁體中文</a></nav><p>© 2026 LabInventi · Legiro</p></footer><script>(()=>{
+ const links=Array.from(document.querySelectorAll('.languages a'));
+ const current=document.documentElement.lang;
+ const explicit=new URLSearchParams(location.search).get('lang');
+ function match(tag){
+  const parts=String(tag).toLowerCase().split('-');
+  if(parts[0]==='pt')return 'pt-BR';
+  if(parts[0]==='zh')return parts.includes('hant')||parts.includes('tw')||parts.includes('hk')||parts.includes('mo')?'zh-Hant':'zh-Hans';
+  return ['en','fr','es','it','de','ja'].includes(parts[0])?parts[0]:null;
+ }
+ const supported=links.map(link=>link.lang);
+ const preferred=supported.includes(explicit)?explicit:
+  current==='pt-BR'?(navigator.languages||[navigator.language]).map(match).find(Boolean)||'en':current;
+ for(const link of document.querySelectorAll('header nav a,.languages a')){
+  const url=new URL(link.getAttribute('href'),location.href);
+  url.searchParams.set('lang',link.lang||current);
+  link.setAttribute('href',url.href);
+ }
+ if(preferred!==current){
+  const target=links.find(link=>link.lang===preferred);
+  if(target){const url=new URL(target.href);url.hash=location.hash;location.replace(url.href);}
+ }
+})();</script></body></html>

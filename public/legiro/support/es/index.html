@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Soporte de Legiro · Legiro</title><meta name="description" content="¿Necesitas ayuda o tienes una sugerencia? Escríbenos."><link rel="canonical" href="https://labinventi.com/legiro/support/es/"><link rel="stylesheet" href="../../style.css"></head><body><header><span class="brand">Legiro</span><nav><a href="../../privacy/es/index.html" >Política de privacidad</a><a href="index.html" aria-current="page">Soporte de Legiro</a></nav></header><main><h1>Soporte de Legiro</h1><p class="intro">¿Necesitas ayuda o tienes una sugerencia? Escríbenos.</p><form class="contact" onsubmit="return false"><label for="message">Tu mensaje</label><textarea id="message" name="body" aria-describedby="email-help"></textarea><a class="compose" id="compose" href="mailto:support@labinventi.com?subject=Soporte%20de%20Legiro">Abrir correo</a><p class="email-help" id="email-help">El botón abre tu aplicación de correo con el mensaje preparado. Tú lo envías desde allí. Si no se abre, escribe directamente a la dirección de abajo.</p><p><a class="email-address" href="mailto:support@labinventi.com">support@labinventi.com</a></p></form><script>(()=>{const message=document.getElementById('message');const link=document.getElementById('compose');const base=link.getAttribute('href');message.addEventListener('input',()=>{link.setAttribute('href',base+'&body='+encodeURIComponent(message.value));});})();</script></main><footer><strong>Idioma</strong><nav class="languages" aria-label="Idioma"><a lang="pt-BR" hreflang="pt-BR" href="../index.html" >Português (Brasil)</a><a lang="en" hreflang="en" href="../en/index.html" >English</a><a lang="fr" hreflang="fr" href="../fr/index.html" >Français</a><a lang="es" hreflang="es" href="index.html" aria-current="page">Español</a><a lang="it" hreflang="it" href="../it/index.html" >Italiano</a><a lang="de" hreflang="de" href="../de/index.html" >Deutsch</a><a lang="ja" hreflang="ja" href="../ja/index.html" >日本語</a><a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html" >简体中文</a><a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html" >繁體中文</a></nav><p>© 2026 LabInventi · Legiro</p></footer><script>(()=>{
+ const links=Array.from(document.querySelectorAll('.languages a'));
+ const current=document.documentElement.lang;
+ const explicit=new URLSearchParams(location.search).get('lang');
+ function match(tag){
+  const parts=String(tag).toLowerCase().split('-');
+  if(parts[0]==='pt')return 'pt-BR';
+  if(parts[0]==='zh')return parts.includes('hant')||parts.includes('tw')||parts.includes('hk')||parts.includes('mo')?'zh-Hant':'zh-Hans';
+  return ['en','fr','es','it','de','ja'].includes(parts[0])?parts[0]:null;
+ }
+ const supported=links.map(link=>link.lang);
+ const preferred=supported.includes(explicit)?explicit:
+  current==='pt-BR'?(navigator.languages||[navigator.language]).map(match).find(Boolean)||'en':current;
+ for(const link of document.querySelectorAll('header nav a,.languages a')){
+  const url=new URL(link.getAttribute('href'),location.href);
+  url.searchParams.set('lang',link.lang||current);
+  link.setAttribute('href',url.href);
+ }
+ if(preferred!==current){
+  const target=links.find(link=>link.lang===preferred);
+  if(target){const url=new URL(target.href);url.hash=location.hash;location.replace(url.href);}
+ }
+})();</script></body></html>

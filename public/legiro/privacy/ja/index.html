@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Legiroのプライバシー · Legiro</title><meta name="description" content="LabInventiのLegiroは、独自アカウント、広告、アプリ間トラッキングなしでガイド付き読書を提供します。このポリシーは、現行バージョンのローカル処理と任意の統計情報について説明します。"><link rel="canonical" href="https://labinventi.com/legiro/privacy/ja/"><link rel="stylesheet" href="../../style.css"></head><body><header><span class="brand">Legiro</span><nav><a href="index.html" aria-current="page">プライバシーポリシー</a><a href="../../support/ja/index.html" >Legiroサポート</a></nav></header><main><h1>Legiroのプライバシー</h1><p class="intro">LabInventiのLegiroは、独自アカウント、広告、アプリ間トラッキングなしでガイド付き読書を提供します。このポリシーは、現行バージョンのローカル処理と任意の統計情報について説明します。</p><section><h2>カメラと読書</h2><p>カメラ操作は対応するiPhoneとiPadで任意に利用できます。Face Trackingと文字認識はデバイス上で動作します。画像、顔のメッシュ、顔の信号は記録、保存、送信されません。アプリで操作をオフにするか、システム設定でカメラの許可を取り消せます。</p></section><section><h2>デバイス上のデータ</h2><p>設定、ブックマーク、読書履歴、読み込んだPDFはデバイス上に保存されます。アプリとSafariはApp Groupを通じて履歴と残り時間を共有します。履歴を削除しても購入は削除されず、ウェルカム特典も更新されません。残り時間はデバイス間で同期されません。</p></section><section><h2>ウェブサイトとクラウド上の本</h2><p>ブラウザで開くサイトには、独自のポリシー、通信、Cookie、ログインセッションがあります。Legiroは、すでにアクセス権のある本のウェブリーダーを開き、ガイド付き読書を追加します。認識は一時的かつローカルに行われ、本の内容をLegiro独自のサーバーに送りません。</p></section><section><h2>購入</h2><p>支払いはAppleがStoreKitを通じて処理します。Legiroはカード情報を受け取りません。確認済みの購入権利はローカルに保存され、オフライン利用のためにもSafariと共有されます。Appleを通じて別のデバイスで購入を復元できますが、ウェルカム特典は移行されません。</p></section><section><h2>任意の統計情報</h2><p>同意した場合のみ、iOSアプリは欧州連合内のTelemetryDeckに、セッション時間の区分、ソースの種類、リズム、カメラのオン・オフ、エラーコード、残り時間の警告と終了、単語数と利用日数の区分、購入画面の表示と結果、初回案内の完了、アプリ起動、目標変更を送ります。文章、タイトル、完全なアドレス、ファイル、カメラ画像や信号、認証情報、アカウント、位置情報、IDFAは送りません。</p></section><section><h2>同意と保持</h2><p>統計情報は最初はオフです。拒否しても読書や購入は制限されません。「設定 → プライバシーとデータ」で許可や取り消しができます。オフにすると送信を中止し、メモリ上だけのキューを破棄します。匿名識別子はUTCで毎日変わります。送信済みデータは個人に結びつけて削除できず、提供元は集計イベントの削除期限を保証していません。TelemetryDeckのポリシーとFAQをご覧ください。</p></section><aside class="note"><p>ストアのプライバシー表示には、製品との操作情報と匿名ハッシュ化されたデバイス識別子が含まれ、個人への関連付けやトラッキングには使用しません。</p><p><a href="https://telemetrydeck.com/docs/guides/privacy-faq/">TelemetryDeckのポリシーとFAQ</a></p></aside></main><footer><strong>言語</strong><nav class="languages" aria-label="言語"><a lang="pt-BR" hreflang="pt-BR" href="../index.html" >Português (Brasil)</a><a lang="en" hreflang="en" href="../en/index.html" >English</a><a lang="fr" hreflang="fr" href="../fr/index.html" >Français</a><a lang="es" hreflang="es" href="../es/index.html" >Español</a><a lang="it" hreflang="it" href="../it/index.html" >Italiano</a><a lang="de" hreflang="de" href="../de/index.html" >Deutsch</a><a lang="ja" hreflang="ja" href="index.html" aria-current="page">日本語</a><a lang="zh-Hans" hreflang="zh-Hans" href="../zh-Hans/index.html" >简体中文</a><a lang="zh-Hant" hreflang="zh-Hant" href="../zh-Hant/index.html" >繁體中文</a></nav><p>© 2026 LabInventi · Legiro</p></footer><script>(()=>{
+ const links=Array.from(document.querySelectorAll('.languages a'));
+ const current=document.documentElement.lang;
+ const explicit=new URLSearchParams(location.search).get('lang');
+ function match(tag){
+  const parts=String(tag).toLowerCase().split('-');
+  if(parts[0]==='pt')return 'pt-BR';
+  if(parts[0]==='zh')return parts.includes('hant')||parts.includes('tw')||parts.includes('hk')||parts.includes('mo')?'zh-Hant':'zh-Hans';
+  return ['en','fr','es','it','de','ja'].includes(parts[0])?parts[0]:null;
+ }
+ const supported=links.map(link=>link.lang);
+ const preferred=supported.includes(explicit)?explicit:
+  current==='pt-BR'?(navigator.languages||[navigator.language]).map(match).find(Boolean)||'en':current;
+ for(const link of document.querySelectorAll('header nav a,.languages a')){
+  const url=new URL(link.getAttribute('href'),location.href);
+  url.searchParams.set('lang',link.lang||current);
+  link.setAttribute('href',url.href);
+ }
+ if(preferred!==current){
+  const target=links.find(link=>link.lang===preferred);
+  if(target){const url=new URL(target.href);url.hash=location.hash;location.replace(url.href);}
+ }
+})();</script></body></html>
